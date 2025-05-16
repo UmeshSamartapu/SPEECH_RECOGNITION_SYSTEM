@@ -1,0 +1,37 @@
+speech-recognition-system/
+│
+├── requirements.txt
+├── main.py
+├── audio_processing.py
+├── google_speech_recognition.py
+├── wav2vec2_recognition.py
+├── tests/
+│   └── test_audio.mp3
+├── api.py
+├── static/
+│   ├── style.css
+│   └── script.js
+├── templates/
+│   └── index.html
+
+
+speechrecognition==3.10.0
+pydub==0.25.1
+transformers==4.36.2
+torch==2.1.1
+librosa==0.10.1
+soundfile==0.12.1
+python-dotenv==1.0.0
+tqdm==4.66.1
+loguru==0.7.2
+
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run recognition (both methods)
+python main.py "tests/test_audio.mp3" --method both
+python main.py "D:/CODtech/CODTECH 02 SPEECH_RECOGNITION_SYSTEM/V1/tests/test_audio.mp3"
+
+# Start the API server
+uvicorn api:app --reload

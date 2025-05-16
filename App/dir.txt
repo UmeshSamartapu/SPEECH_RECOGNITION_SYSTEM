@@ -1,0 +1,39 @@
+speech-recognition-system/
+├── webapp.py             # New FastAPI application
+├── main.py               # Your existing main file
+├── audio_processing.py
+├── google_speech_recognition.py
+├── wav2vec2_recognition.py
+├── requirements.txt
+├── uploads/              # Will be created automatically
+├── outputs/              # Will be created automatically
+├── static/
+│   ├── style.css       # CSS File
+│   └── script.js       # JavaScript File
+
+cd "D:\CODtech\CODTECH 02 SPEECH_RECOGNITION_SYSTEM\V2"
+# Create folders
+mkdir uploads, outputs, static
+# Create files
+New-Item webapp.py -ItemType File
+New-Item main.py -ItemType File
+New-Item audio_processing.py -ItemType File
+New-Item google_speech_recognition.py -ItemType File
+New-Item wav2vec2_recognition.py -ItemType File
+New-Item requirements.txt -ItemType File
+
+fastapi==0.95.2
+uvicorn==0.22.0
+speechrecognition==3.10.0
+pydub==0.25.1
+transformers==4.36.2
+torch==2.1.1
+librosa==0.10.1
+soundfile==0.12.1
+python-multipart==0.0.6
+python-dotenv==1.0.0
+loguru==0.7.2
+jinja2==3.1.2
+
+
+uvicorn webapp:app --reload

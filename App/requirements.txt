@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+speechrecognition
+pydub
+transformers
+torch
+librosa
+soundfile
+python-multipart
+python-dotenv
+loguru
+jinja2

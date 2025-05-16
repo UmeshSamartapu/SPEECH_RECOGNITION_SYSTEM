@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speech Recognition</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech Recognition</h1>
+        <form id="uploadForm">
+            <input type="file" id="audioFile" accept=".mp3,.wav" required>
+            <select id="method">
+                <option value="both">Both</option>
+                <option value="google">Google</option>
+                <option value="wav2vec2">Wav2Vec2</option>
+            </select>
+            <button type="submit">Process</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+librosa
+soundfile
+python-dotenv
+tqdm
+
+fastapi
+uvicorn
+loguru
+python-multipart
+
+# Likely dependencies used in process_audio
+speechrecognition
+transformers
+torch
+torchaudio
+
+# Optional: if working with audio files
+pydub
+ffmpeg-python
