@@ -22,30 +22,58 @@ html_template = """
 <head>
     <title>Speech Recognition</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Speech Recognition</h1>
+        <h1>Speech Recognition with Google SR & Wav2Vec Model</h1>
         <form id="uploadForm">
             <div class="form-group">
-                <input type="file" id="audioFile" accept=".mp3,.wav" required>
+                <label class="file-upload">
+                    <div class="file-upload-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Choose an audio file (MP3 or WAV)</span>
+                    </div>
+                    <div class="file-name" id="fileName">No file selected</div>
+                    <input type="file" id="audioFile" accept=".mp3,.wav" required>
+                </label>
             </div>
             <div class="form-group">
                 <select id="method">
                     <option value="both">Both Methods</option>
-                    <option value="google">Google</option>
-                    <option value="wav2vec2">Wav2Vec2</option>
+                    <option value="google">Google Speech Recognition</option>
+                    <option value="wav2vec2">Wav2Vec2 Model</option>
                 </select>
             </div>
-            <button type="submit">Process</button>
+            <button type="submit" id="submitBtn">
+                <i class="fas fa-play-circle"></i> Process Audio
+            </button>
         </form>
-        <div class="results" id="results"></div>
+        
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <p>Processing your audio file...</p>
+        </div>
+        
+        <div class="results" id="results">
+            <div class="result-section" id="googleResult" style="display: none;">
+                <h3><i class="fas fa-google"></i> Google Results</h3>
+                <div class="result-text" id="googleText"></div>
+            </div>
+            <div class="result-section" id="wav2vec2Result" style="display: none;">
+                <h3><i class="fas fa-robot"></i> Wav2Vec2 Results</h3>
+                <div class="result-text" id="wav2vec2Text"></div>
+            </div>
+            <a href="#" class="download-btn" id="downloadBtn" style="display: none;">
+                <i class="fas fa-download"></i> Download Results
+            </a>
+        </div>
     </div>
     <script src="/static/script.js"></script>
 </body>
 </html>
 """
-
 
 @app.get("/", response_class=HTMLResponse)
 async def home():
