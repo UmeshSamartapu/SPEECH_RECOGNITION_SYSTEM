@@ -4,7 +4,7 @@ A complete Python-based system for transcribing speech to text using two approac
 1. **Google Web Speech API** (via `speechrecognition`)
 2. **Facebook's Wav2Vec2** (via Hugging Face Transformers)
 
-![System Diagram](https://i.imgur.com/xyz123.png) *(Optional: Add diagram if available)*
+![Frontend](https://github.com/UmeshSamartapu/SPEECH_RECOGNITION_SYSTEM/blob/main/App/input/speechrecogwithGoogle-Frontend.png)
 
 ## 🌟 Features
 - Supports both Google API and Wav2Vec2 models
@@ -113,7 +113,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Demo 
 ### You can watch the ([youtube video](  )) for demo
 <p align="center">
-  <img src="  " />
+  <img src="https://github.com/UmeshSamartapu/SPEECH_RECOGNITION_SYSTEM/blob/main/App/input/speechrecogwithGoogle-Demo.gif" />
 </p>  
 
 
